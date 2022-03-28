@@ -118,20 +118,14 @@ with container2:
         st.write('   ')
         st.write('#### Monthly Income vs Seniority at IBM')   
 
-             
+           
+   
         #4_HEXBIN
-        ax = figs[3].add_subplot(1,1,1)
-        sns.jointplot(x=ibm["YearsAtCompany"], y=ibm["MonthlyIncome"], kind='hex', marginal_kws=dict(bins=30, fill=True), xlim= (0,20), ylim= (0,10000) )
-        ax.set(xlabel="Seniority at IBM", ylabel = "Monthly Income")
-        
+        ax = sns.jointplot(x=ibm["YearsAtCompany"], y=ibm["MonthlyIncome"], kind='hex', marginal_kws=dict(bins=30, fill=True), xlim= (0,20), ylim= (0,10000), cmap='BuPu' )
         plt.xticks(fontsize=9)
         plt.yticks(fontsize=9)
-        plt.style.use('ggplot')
-        
-        plt.savefig('hexbin.png', bbox_inches='tight')
-        st.image('hexbin.png')
+        st.pyplot()
              
-
 
 container3 = st.container()
 col1, col2 = st.columns(2)
