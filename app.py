@@ -92,7 +92,7 @@ col1, col2 = st.columns(2)
 
 with container2:
     
-    with col1:
+   with col1:
         st.header('2 | More Data exploration')
         st.write("#### Education level distribution")
        
@@ -100,12 +100,14 @@ with container2:
         ax= figs[2].add_subplot(1,1,1)
         waffle_data= ibm['Education'].value_counts()
         plt.figure(FigureClass=Waffle, 
-                   rows=35, columns=45, values=waffle_data, 
-                   labels=["Bachelor", "Master", "College", "Below College", "PhD"],
+                   rows=40, columns=40, values=waffle_data, 
+                   labels=["Bachelor", "Master", "College", "Below College", "PhD"], colors= ['#dbe9f6', '#bad6eb', '#89bedc', '#539ecd', '#0b559f'],
                    legend={'loc': 'lower right', 'ncol': 5, 'fontsize': 8, 'framealpha': 0.8}, 
-                   starting_location='NW', block_arranging_style= 'snake')
+                   starting_location='NW', block_arranging_style='snake')
        
         plt.style.use('ggplot')
+        sns.color_palette('Blues')
+              
         plt.savefig('waffle.png', bbox_inches='tight')
         st.image('waffle.png')
  
@@ -118,10 +120,9 @@ with container2:
         st.write('   ')
         st.write('#### Monthly Income vs Seniority at IBM')   
 
-           
-   
-        #4_HEXBIN
-        ax = sns.jointplot(x=ibm["YearsAtCompany"], y=ibm["MonthlyIncome"], kind='hex', marginal_kws=dict(bins=30, fill=True), xlim= (0,20), ylim= (0,10000), cmap='BuPu' )
+             
+         # 4_HEXBIN   
+        ax = sns.jointplot(x=ibm["YearsAtCompany"], y=ibm["MonthlyIncome"], kind='hex', marginal_kws=dict(bins=30, fill=True), xlim= (0,20), ylim= (0,10000), cmap='Blues' )
         plt.xticks(fontsize=9)
         plt.yticks(fontsize=9)
         st.pyplot()
