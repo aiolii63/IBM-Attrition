@@ -61,7 +61,6 @@ with container1:
         ax.set(xlabel= x_axis, ylabel = "Employee count")
         st.write(figs[0])
         
-
     with col2:   
         
         st.header('   ')
