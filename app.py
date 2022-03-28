@@ -113,14 +113,12 @@ with container2:
 
      
     with col2:
-     
         st.header('   ')
         st.header('   ')
         st.write('   ')
         st.write('#### Monthly Income vs Seniority at IBM')   
 
-             
-         # 4_HEXBIN   
+        # 4_HEXBIN   
         ax = sns.jointplot(x=ibm["YearsAtCompany"], y=ibm["MonthlyIncome"], kind='hex', marginal_kws=dict(bins=30, fill=True), xlim= (0,20), ylim= (0,10000), cmap='Blues' )
         plt.xticks(fontsize=9)
         plt.yticks(fontsize=9)
