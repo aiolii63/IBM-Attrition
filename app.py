@@ -18,7 +18,7 @@ warnings.filterwarnings("ignore")
 
 pd.set_option("display.max_columns", 50)
 
-ibm = pd.read_csv('C:/Users/olivi/Documents/Ironhack/IRONLABS_OM/Project IBM Attrition/clean_ibm.csv', sep=';')
+ibm = pd.read_csv('clean_ibm.csv', sep=';')
 
 st.set_page_config(layout="wide")
 
